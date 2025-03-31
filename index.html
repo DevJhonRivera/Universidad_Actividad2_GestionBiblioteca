@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Gestión de Biblioteca</h1>
+        </header>
+        
+        <div class="menu">
+            <button onclick="mostrarSeccion('libros')">Gestión de Libros</button>
+            <button onclick="mostrarSeccion('usuarios')">Gestión de Usuarios</button>
+            <button onclick="mostrarSeccion('prestamos')">Préstamos y Devoluciones</button>
+        </div>
+        
+        <!-- Sección de Libros -->
+        <div id="libros" class="seccion">
+            <h2>Gestión de Libros</h2>
+            <div class="formulario">
+                <input type="text" id="titulo" placeholder="Título del libro">
+                <input type="text" id="autor" placeholder="Autor">
+                <input type="text" id="codigo" placeholder="Codigo">
+                <!-- <select id="estado">
+                    <option value="disponible">Disponible</option>
+                    <option value="prestado">Prestado</option>
+                </select> -->
+                <button onclick="agregarLibro()">Agregar Libro</button>
+                <button onclick="buscarLibro()">Buscar Libro</button>
+            </div>
+            <div class="lista" id="lista-libros"></div>
+        </div>
+        
+        <!-- Sección de Usuarios -->
+        <div id="usuarios" class="seccion" style="display:none;">
+            <h2>Gestión de Usuarios</h2>
+            <div class="formulario">
+                <input type="text" id="nombre" placeholder="Nombre del usuario">
+                <input type="text" id="idUsuario" placeholder="ID de usuario">
+                <button onclick="agregarUsuario()">Agregar Usuario</button>
+                <button onclick="buscarUsuario()">Buscar Usuario</button>
+            </div>
+            <div class="lista" id="lista-usuarios"></div>
+        </div>
+        
+        <!-- Sección de Préstamos -->
+        <div id="prestamos" class="seccion" style="display:none;">
+            <h2>Préstamos y Devoluciones</h2>
+            <div class="formulario">
+                <input type="text" id="idPrestamo" placeholder="ID de usuario">
+                <input type="text" id="codigoPrestamo" placeholder="Codigo del libro">
+                <button onclick="realizarPrestamo()">Realizar Préstamo</button>
+                <button onclick="devolverLibro()">Devolver Libro</button>
+            </div>
+            <div class="lista" id="lista-prestamos"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
